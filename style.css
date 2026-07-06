@@ -1,0 +1,332 @@
+/* Codigo hecho por Ey40-0 */
+/* Set de colores en variables */
+:root {
+--global-grey: #1a1a1a;
+--dark-gray: #333333;
+--blue-font: #6fabff;
+--white-gray: #f9f9f9;
+--blue-hover: #4d8fe0;
+}
+/* Reseteo basico de margenes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Hacer la fuente global para todo el cuerpo del sitio */
+body {
+    font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+    background-color: var(--white-gray);
+    color: var(--dark-gray);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+article {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+/* Aplicar Google Sans a los titulos para que resalten mas */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Google Sans', 'Nunito', sans-serif;
+    font-weight: 700;
+    color: var(--global-grey);
+}
+a {
+    text-decoration: none;
+}
+/* Classes */
+.header-bar {
+/* Estetica */
+    background-color: var(--global-grey);
+    border-bottom: .2rem solid var(--blue-font);
+/* Posicionamiento */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.nav-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+/* Enlaces en Nav */
+.nav-link {
+    color: var(--white-gray);
+    font-size: large;
+    padding: .2rem;
+    text-decoration: none;
+}
+.blue-link {
+    color: var(--blue-font);
+    font-weight: 700;
+}
+/* Mismo subrayado direccional que el link de Github en el footer (ver mas abajo), */
+/* reutilizado aca en vez de repetir el bloque tres veces */
+.nav-link,
+.blue-link,
+footer a {
+    position: relative;
+}
+.nav-link::after,
+.blue-link::after,
+footer a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -.2rem;
+    width: 100%;
+    height: .2rem;
+    background-color: var(--blue-font);
+/* Animacion: nace desde la derecha en reposo y crece desde la izquierda al pasar el mouse */
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .2s ease;
+}
+.nav-link:hover::after,
+.blue-link:hover::after,
+footer a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+/* Encabezado con banda diagonal, reutilizable en cada seccion */
+.section-heading {
+    position: relative;
+    display: inline-block;
+    padding-bottom: .6rem;
+    margin-bottom: 1.5rem;
+}
+.section-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 65%;
+    height: .4rem;
+    background-color: var(--blue-font);
+    transform: skewX(-15deg);
+    transform-origin: left;
+}
+/* Presentacion (hero) */
+#presentation-card {
+/* Color */
+    background-color: var(--global-grey);
+/* Espacio (el padding-bottom extra da espacio para que el corte de abajo no tape el texto) */
+    padding: 3rem 2.5rem 5rem;
+/* Recorte diagonal */
+    position: relative;
+    overflow: hidden;
+/* Inclinacion de la card: el ultimo valor (0 88%) es la esquina inferior izquierda. */
+/* Bajar ese porcentaje = corte mas pronunciado, subirlo (mas cerca de 100%) = corte mas sutil */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
+}
+#presentation-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+    background-color: var(--blue-font);
+    opacity: .12;
+    clip-path: polygon(100% 0, 100% 100%, 40% 100%, 70% 0);
+    z-index: -1;
+}
+#title {
+    color: var(--blue-font);
+}
+#title-txt-intro {
+    color: var(--white-gray);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+#txt-intro {
+    color: var(--white-gray);
+    font-size: larger;
+    text-align: justify;
+    max-width: 60ch;
+}
+/* Stack tecnologico */
+.tech-stack {
+    display: flex;
+    flex-direction: column;
+}
+.tech-group {
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1.2rem;
+    background-color: var(--white-gray);
+    border: .1rem solid var(--dark-gray);
+    border-left: 1rem solid var(--blue-font);
+}
+.tech-group h3 {
+    font-size: 1.15rem;
+    margin-bottom: .3rem;
+}
+.tech-group p {
+    font-size: .95rem;
+}
+/* Aplicaciones */
+.app-bubble {
+    display: flex;
+    flex-direction: column;
+}
+.app-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    padding: 1.8rem;
+    border: .15rem solid var(--global-grey);
+    clip-path: polygon(0 0, 92% 0, 100% 12%, 100% 100%, 0 100%);
+    max-width: 420px;
+}
+.app-icon {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0; /* Mejora propia (no pedida): que el icono no se achique si el texto de la card crece */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--global-grey);
+    color: var(--white-gray);
+    font-size: .6rem;
+    text-align: center;
+    padding: .4rem;
+    word-break: break-word;
+    clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%, 0 18%);
+}
+.app-card h3 {
+    font-size: 1.3rem;
+}
+.app-card p {
+    font-size: .95rem;
+}
+/* Boton con relleno diagonal al pasar el mouse */
+.btn {
+    position: relative;
+    display: inline-block;
+    align-self: flex-start;
+    padding: .7rem 1.6rem;
+    background-color: var(--blue-font);
+    color: var(--global-grey);
+    font-weight: 700;
+    overflow: hidden;
+    z-index: 1;
+    transition: color .25s ease;
+}
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -15%;
+    width: 130%;
+    height: 100%;
+    background-color: var(--global-grey);
+    transform: translateX(-100%) skewX(-15deg);
+    transition: transform .3s ease;
+    z-index: -1;
+}
+.btn:hover {
+    color: var(--white-gray);
+}
+.btn:hover::before {
+    transform: translateX(0) skewX(-15deg);
+}
+/* Pie de pagina con corte diagonal arriba */
+footer {
+    position: relative;
+    background-color: var(--global-grey);
+    color: var(--white-gray);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 4rem 2rem 1.8rem;
+    clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
+}
+footer a {
+    color: var(--blue-font);
+    font-weight: 700;
+}
+/* El subrayado (::after) ya viene del bloque compartido de arriba, */
+/* aca solo se agrega el cambio de color que hace unico a este link */
+footer a:hover {
+    color: var(--white-gray);
+}
+footer a:hover::after {
+    background-color: var(--white-gray);
+}
+/* Mejora propia (no pedida): estados de foco visibles para quien navega con teclado */
+/* Sin sombra ni radio, solo un contorno solido que respeta la paleta */
+.nav-link:focus-visible,
+.blue-link:focus-visible,
+.btn:focus-visible,
+footer a:focus-visible {
+    outline: .15rem solid var(--blue-font);
+    outline-offset: .25rem;
+}
+/* Responsive */
+@media (max-width: 900px) {
+    .app-card {
+        max-width: 100%;
+    }
+    #presentation-card::before {
+        width: 55%;
+        opacity: .1;
+    }
+}
+@media (max-width: 700px) {
+    .header-bar {
+        padding: 1rem 1.2rem;
+    }
+    #title {
+        font-size: 1.4rem;
+    }
+    .nav-link {
+        font-size: medium;
+    }
+    #title-txt-intro {
+        font-size: 1.6rem;
+    }
+    #txt-intro {
+        font-size: 1rem;
+        text-align: left;
+    }
+    article {
+        padding: 2.2rem 1.2rem;
+    }
+    footer {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 3.5rem;
+    }
+}
+@media (max-width: 480px) {
+    #presentation-card {
+        padding: 2rem 1.5rem 3.5rem;
+    }
+    #presentation-card::before {
+        display: none;
+    }
+    .app-card {
+        clip-path: polygon(0 0, 88% 0, 100% 8%, 100% 100%, 0 100%);
+    }
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+    footer {
+        clip-path: polygon(0 22px, 100% 0, 100% 100%, 0 100%);
+    }
+}
+/* Respeto por preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}

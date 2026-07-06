@@ -3,9 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <title>Landing</title>
 </head>
 <body>
-    <h1>Hola mundo</h1>
+<!-- Titulo de la pagina, enlaces -->
+    <header class="header-bar">
+        <h1 id="title">Inicio</h1>
+        <nav class="nav-bar">
+            <a href="#apps" class="nav-link">Aplicaciones</a>
+        </nav>
+    </header>
+<!-- Fondo con presentacion -->
+    <article class="hero-section">
+        <section id="presentation-card">
+            <h2 id="title-txt-intro">Hola, soy Ey4 👋</h2>
+            <p id="txt-intro">Programador y estudiante de ingenieria de software enfocado en el desarrollo de aplicaciones móviles y soluciones de software simples. Puedes conocer mas de mis proyectos <a href="" class="blue-link">aqui</a>. </p>
+        </section>
+    </article>
+<!-- Stack tecnologico -->
+    <article class="stack-section">
+       <section class="tech-stack">
+            <h2 class="section-heading">Tecnologías</h2>
+            <div class="tech-group">
+                <h3>Principal & Mobile</h3>
+                <p>Flutter / Dart / Ionic / Kotlin / Git</p>
+            </div>
+            <div class="tech-group">
+                <h3>Web & Backend</h3>
+                <p>HTML5 / CSS3 / JavaScript / PHP / Python / Java</p>
+            </div>
+            <div class="tech-group">
+                <h3>Entorno / OS</h3>
+                <p>Fedora Linux</p>
+            </div>
+        </section>
+    </article>
+<!-- Aplicaciones en cascada -->
+    <article class="apps-section" id="apps">
+        <div class="app-bubble">
+            <h2 class="section-heading">Mis Aplicaciones</h2>
+<!-- Tarjeta de Supo -->
+        <div class="app-card">
+            <div class="app-icon">supo-icon.png</div> <!-- Aquí irá el logo morado cuando lo tengas -->
+                <h3>Supo</h3>
+                <p>Gestor de suscripciones minimalista y privado. Controla tus gastos mensuales sin salir de tu dispositivo.</p>
+                <a href="./supo/" class="btn">Ver App</a>
+            </div>
+<!-- Espacio listo para cuando retomes Declutter u otra app -->
+<!-- 
+            <div class="app-card">
+                ...
+            </div> 
+            -->
+        </div>
+    </article>
+<!-- fin de pagina -->
+    <footer>
+        <p>&copy; 2026 Ey40-0. Desarrollado con código limpio.</p>
+        <a href="https://github.com/Ey40-0" target="_blank">GitHub</a>
+    </footer>
 </body>
 </html>
