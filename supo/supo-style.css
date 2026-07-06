@@ -1,0 +1,388 @@
+/* Codigo hecho por Ey40-0 */
+/* Esta pagina vive dentro de /supo/, por eso tiene su propia hoja de estilos */
+/* en vez de compartir la del portafolio: cada app tiene su propio color de marca */
+/* pero se mantienen las mismas reglas de diseno (sin radio, sin sombra, diagonales) */
+:root {
+--global-grey: #1a1a1a;
+--dark-gray: #333333;
+--white-gray: #f9f9f9;
+--supo-purple: #7c5cfc;
+}
+/* Reseteo basico de margenes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Hacer la fuente global para todo el cuerpo del sitio */
+body {
+    font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+    background-color: var(--white-gray);
+    color: var(--dark-gray);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+article {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+/* Aplicar Google Sans a los titulos para que resalten mas */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Google Sans', 'Nunito', sans-serif;
+    font-weight: 700;
+    color: var(--global-grey);
+}
+a {
+    text-decoration: none;
+}
+/* Header */
+.header-bar {
+    background-color: var(--global-grey);
+    border-bottom: .2rem solid var(--supo-purple);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.nav-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.brand-link {
+    font-size: 1.2rem;
+}
+/* Enlaces: mismo subrayado direccional que en el portafolio */
+.nav-link {
+    color: var(--white-gray);
+    font-size: large;
+    padding: .2rem;
+    position: relative;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -.2rem;
+    width: 100%;
+    height: .1rem;
+    background-color: var(--supo-purple);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .2s ease;
+}
+.nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.text-link {
+    position: relative;
+    color: var(--supo-purple);
+    font-weight: 700;
+}
+.text-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -.2rem;
+    width: 100%;
+    height: .1rem;
+    background-color: var(--supo-purple);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .2s ease;
+}
+.text-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+/* Encabezado con banda diagonal, igual que en el portafolio pero en morado */
+.section-heading {
+    position: relative;
+    display: inline-block;
+    padding-bottom: .6rem;
+    margin-bottom: 1.5rem;
+}
+.section-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 65%;
+    height: .4rem;
+    background-color: var(--supo-purple);
+    transform: skewX(-15deg);
+    transform-origin: left;
+}
+/* Hero de la app */
+#app-hero {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--global-grey);
+    text-align: center;
+    padding: 3.5rem 2rem 5rem;
+/* Inclinacion del hero: el ultimo valor (0 90%) es la esquina inferior izquierda. */
+/* Bajar ese porcentaje = corte mas pronunciado, subirlo (mas cerca de 100%) = corte mas sutil */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+}
+#app-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: var(--supo-purple);
+    opacity: .14;
+    clip-path: polygon(0 0, 60% 0, 30% 100%, 0 100%);
+    z-index: -1;
+}
+.app-hero-icon {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--supo-purple);
+    color: var(--global-grey);
+    font-size: .65rem;
+    font-weight: 700;
+    text-align: center;
+    padding: .4rem;
+    word-break: break-word;
+    clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%, 0 18%);
+}
+#app-title {
+    color: var(--white-gray);
+    font-size: 2.6rem;
+}
+#app-tagline {
+    color: var(--supo-purple);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-top: .5rem;
+}
+#app-description {
+    color: var(--white-gray);
+    max-width: 55ch;
+    margin: 1.5rem auto 0;
+}
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+/* Manual de uso */
+.manual-section {
+    text-align: center;
+}
+.steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.8rem;
+    margin-top: 1rem;
+    text-align: left;
+}
+.step-card {
+    position: relative;
+    flex: 1 1 260px;
+    padding: 1.8rem;
+    border: .1rem solid var(--global-grey);
+    clip-path: polygon(0 0, 92% 0, 100% 10%, 100% 100%, 0 100%);
+}
+.step-number {
+    display: block;
+    font-family: 'Google Sans', 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--supo-purple);
+    margin-bottom: .3rem;
+}
+.step-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+/* Espacio reservado para la captura de pantalla de cada paso */
+.step-image {
+    width: 100%;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white-gray);
+    border: .1rem dashed var(--dark-gray);
+    color: var(--dark-gray);
+    font-size: .8rem;
+    margin-bottom: 1rem;
+    clip-path: polygon(0 0, 94% 0, 100% 14%, 100% 100%, 0 100%);
+}
+/* Texto libre a completar por Ey40-0, se marca en cursiva mientras es un placeholder */
+.step-text {
+    font-style: italic;
+    color: var(--dark-gray);
+}
+/* Privacidad y donaciones comparten el mismo formato simple */
+.privacy-section,
+.coffee-section {
+    max-width: 65ch;
+}
+.privacy-section p,
+.coffee-section p {
+    margin-bottom: 1.5rem;
+}
+/* Boton principal con relleno diagonal al pasar el mouse, igual mecanica que en el portafolio */
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: .7rem 1.6rem;
+    background-color: var(--supo-purple);
+    color: var(--global-grey);
+    font-weight: 700;
+    overflow: hidden;
+    z-index: 1;
+    transition: color .25s ease;
+}
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -15%;
+    width: 130%;
+    height: 100%;
+    background-color: var(--global-grey);
+    transform: translateX(-100%) skewX(-15deg);
+    transition: transform .3s ease;
+    z-index: -1;
+}
+.btn:hover {
+    color: var(--white-gray);
+}
+.btn:hover::before {
+    transform: translateX(0) skewX(-15deg);
+}
+/* Variante en contorno, para acciones secundarias como Privacidad */
+.btn-outline {
+    background-color: transparent;
+    color: var(--supo-purple);
+    border: .15rem solid var(--supo-purple);
+}
+.btn-outline::before {
+    background-color: var(--supo-purple);
+}
+.btn-outline:hover {
+    color: var(--white-gray);
+}
+/* Pie de pagina, mismo corte diagonal que en el portafolio */
+footer {
+    position: relative;
+    background-color: var(--global-grey);
+    color: var(--white-gray);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 4rem 2rem 1.8rem;
+    clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
+}
+footer a {
+    position: relative;
+    color: var(--supo-purple);
+    font-weight: 700;
+}
+footer a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -.2rem;
+    width: 100%;
+    height: .1rem;
+    background-color: var(--supo-purple);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .2s ease;
+}
+footer a:hover {
+    color: var(--white-gray);
+}
+footer a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+    background-color: var(--white-gray);
+}
+/* Estados de foco visibles para quien navega con teclado, sin sombra ni radio */
+.nav-link:focus-visible,
+.text-link:focus-visible,
+.btn:focus-visible,
+footer a:focus-visible {
+    outline: .15rem solid var(--supo-purple);
+    outline-offset: .25rem;
+}
+/* Responsive */
+@media (max-width: 900px) {
+    #app-hero::before {
+        width: 60%;
+        opacity: .1;
+    }
+}
+@media (max-width: 700px) {
+    .header-bar {
+        padding: 1rem 1.2rem;
+        flex-wrap: wrap;
+        gap: .8rem;
+    }
+    .nav-bar {
+        gap: 1rem;
+    }
+    .brand-link {
+        font-size: 1rem;
+    }
+    #app-title {
+        font-size: 2rem;
+    }
+    #app-hero {
+        padding: 2.5rem 1.5rem 4rem;
+    }
+    article {
+        padding: 2.2rem 1.2rem;
+    }
+    .steps {
+        flex-direction: column;
+    }
+    footer {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 3.5rem;
+    }
+}
+@media (max-width: 480px) {
+    #app-hero::before {
+        display: none;
+    }
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    .hero-actions .btn,
+    .hero-actions .text-link {
+        width: 100%;
+        text-align: center;
+    }
+    footer {
+        clip-path: polygon(0 22px, 100% 0, 100% 100%, 0 100%);
+    }
+}
+/* Respeto por preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}
