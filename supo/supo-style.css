@@ -152,7 +152,8 @@ a {
     align-items: center;
     justify-content: center;
 }
-.app-hero-icon img {
+.app-hero-icon img,
+.step-image img {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -211,7 +212,7 @@ a {
     margin-bottom: 1rem;
 }
 /* Espacio reservado para la captura de pantalla de cada paso */
-.step-image {
+/* .step-image {
     width: 100%;
     height: 160px;
     display: flex;
@@ -223,7 +224,7 @@ a {
     font-size: .8rem;
     margin-bottom: 1rem;
     clip-path: polygon(0 0, 94% 0, 100% 14%, 100% 100%, 0 100%);
-}
+} */
 /* Texto libre a completar por Ey40-0, se marca en cursiva mientras es un placeholder */
 .step-text {
     font-style: italic;
