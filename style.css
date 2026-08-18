@@ -1,289 +1,370 @@
 /* Codigo hecho por Ey40-0 */
-/* Set de colores en variables */
+
+/* ─── Tokens de diseño ─────────────────────────────────────────── */
 :root {
---global-grey: #1a1a1a;
---dark-gray: #333333;
---blue-font: #6fabff;
---white-gray: #f9f9f9;
---blue-hover: #4d8fe0;
+    --blue:        #6fabff;
+    --blue-dim:    #4d8fe0;
+    --blue-faint:  hsl(215 100% 85% / .12);
+    --blue-border: hsl(215 100% 70% / .28);
+
+    --bg:          #f5f7fa;
+    --bg-card:     #ffffff;
+    --bg-dark:     #111318;
+
+    --text:        #1e2230;
+    --text-muted:  #5a6072;
+    --text-light:  #f0f4ff;
+
+    --radius:      10px;
+    --radius-sm:   6px;
+    --shadow-card: 0 2px 16px hsl(215 40% 60% / .10), 0 1px 4px hsl(0 0% 0% / .04);
+    --transition:  .22s cubic-bezier(.4, 0, .2, 1);
 }
-/* Reseteo basico de margenes */
-* {
+
+/* ─── Reset ─────────────────────────────────────────────────────── */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 html {
     scroll-behavior: smooth;
+    font-size: 16px;
 }
-/* Hacer la fuente global para todo el cuerpo del sitio */
+
+/* ─── Base ───────────────────────────────────────────────────────── */
 body {
     font-family: 'Nunito', system-ui, -apple-system, sans-serif;
-    background-color: var(--white-gray);
-    color: var(--dark-gray);
-    line-height: 1.6;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
     overflow-x: hidden;
 }
-article {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 3rem 1.5rem;
-}
-/* Aplicar Google Sans a los titulos para que resalten mas */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Google Sans', 'Nunito', sans-serif;
     font-weight: 700;
-    color: var(--global-grey);
+    line-height: 1.2;
+    color: var(--text);
 }
-a {
-    text-decoration: none;
-}
-/* Classes */
+a { text-decoration: none; }
+
+/* ─── Header ─────────────────────────────────────────────────────── */
 .header-bar {
-/* Estetica */
-    background-color: var(--global-grey);
-    border-bottom: .2rem solid var(--blue-font);
-/* Posicionamiento */
+    background-color: var(--bg-dark);
+    border-bottom: 1px solid var(--blue-border);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    padding: .9rem 2.5rem;
     position: sticky;
     top: 0;
     z-index: 100;
+    backdrop-filter: blur(12px);
+}
+#title {
+    font-family: 'Google Sans', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: .04em;
 }
 .nav-bar {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
 }
-/* Enlaces en Nav */
 .nav-link {
-    color: var(--white-gray);
-    font-size: large;
-    padding: .2rem;
-    text-decoration: none;
-}
-.blue-link {
-    color: var(--blue-font);
-    font-weight: 700;
-}
-/* Mismo subrayado direccional que el link de Github en el footer (ver mas abajo), */
-/* reutilizado aca en vez de repetir el bloque tres veces */
-.nav-link,
-.blue-link,
-footer a {
+    color: hsl(0 0% 80%);
+    font-size: .9rem;
+    font-weight: 600;
+    letter-spacing: .02em;
+    padding: .2rem 0;
     position: relative;
+    transition: color var(--transition);
 }
-.nav-link::after,
-.blue-link::after,
-footer a::after {
+.nav-link::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -.2rem;
+    bottom: -.15rem;
     width: 100%;
-    height: .2rem;
-    background-color: var(--blue-font);
-/* Animacion: nace desde la derecha en reposo y crece desde la izquierda al pasar el mouse */
+    height: 2px;
+    background: var(--blue);
     transform: scaleX(0);
     transform-origin: right;
-    transition: transform .2s ease;
+    transition: transform var(--transition);
 }
-.nav-link:hover::after,
-.blue-link:hover::after,
-footer a:hover::after {
+.nav-link:hover { color: var(--blue); }
+.nav-link:hover::after {
     transform: scaleX(1);
     transform-origin: left;
 }
-/* Encabezado con banda diagonal, reutilizable en cada seccion */
-.section-heading {
-    position: relative;
-    display: inline-block;
-    padding-bottom: .6rem;
-    margin-bottom: 1.5rem;
+
+/* ─── Layout base ────────────────────────────────────────────────── */
+.section-wrap {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
 }
-.section-heading::after {
+.section-wrap + .section-wrap {
+    padding-top: 0;
+}
+
+/* ─── Portada ────────────────────────────────────────────────────── */
+.seccion-portada {
+    background: var(--bg-dark);
+    /* Patrón de puntos muy sutil */
+    background-image:
+        radial-gradient(hsl(215 100% 75% / .07) 1px, transparent 1px);
+    background-size: 28px 28px;
+}
+.portada-inner {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 7rem 2rem 6rem;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 3rem;
+    align-items: center;
+}
+.portada-kicker {
+    display: inline-block;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--blue);
+    border: 1px solid var(--blue-border);
+    background: var(--blue-faint);
+    padding: .3rem .85rem;
+    border-radius: 99px;
+    margin-bottom: 1.4rem;
+}
+.portada-headline {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 1.1rem;
+    letter-spacing: -.01em;
+}
+.portada-headline span {
+    color: var(--blue);
+}
+#txt-intro {
+    font-size: 1.05rem;
+    color: hsl(220 20% 75%);
+    max-width: 52ch;
+    margin-bottom: 2rem;
+}
+#txt-intro .blue-link {
+    color: var(--blue);
+    font-weight: 700;
+    position: relative;
+}
+#txt-intro .blue-link::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: 0;
-    width: 65%;
-    height: .4rem;
-    background-color: var(--blue-font);
-    transform: skewX(-15deg);
+    bottom: -.15rem;
+    width: 100%;
+    height: 2px;
+    background: var(--blue);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--transition);
+}
+#txt-intro .blue-link:hover::after {
+    transform: scaleX(1);
     transform-origin: left;
 }
-/* Portada (antes: hero-section) */
-.seccion-portada {
-    padding-top: 3rem;  /* mismo espaciado que el article de Supo */
-    padding-bottom: 0;
-    padding-left: 0;
-    padding-right: 0;
-    max-width: 100%;
-    margin: 0;
-}
-/* Tarjeta de presentacion (antes: presentation-card) */
-#tarjeta-presentacion {
-/* Color */
-    background-color: var(--global-grey);
-/* Layout split: texto izquierda, visual derecha */
-    display: grid;
-    grid-template-columns: 1fr 280px;
-    gap: 2.5rem;
-    align-items: center;
-/* Espacio (el padding-bottom extra da espacio para que el corte de abajo no tape el texto) */
-    padding: 3rem 2.5rem 5rem;
-    max-width: 1100px;
-    margin: 0 auto;
-/* Recorte diagonal */
-    position: relative;
-    overflow: hidden;
-/* Inclinacion: el ultimo valor (0 88%) es la esquina inferior izquierda */
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
-}
-#tarjeta-presentacion::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 45%;
-    height: 100%;
-    background-color: var(--blue-font);
-    opacity: .12;
-    clip-path: polygon(100% 0, 100% 100%, 40% 100%, 70% 0);
-    z-index: -1;
-}
-/* Contenedor izquierdo del split */
-.presentacion-texto {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-.presentacion-cta {
-    align-self: flex-start;
-}
-/* Tarjeta visual derecha del split */
+
+/* Panel derecho de la portada */
 .presentacion-visual {
-    padding: 1.2rem 1.4rem;
-    border: .1rem solid rgba(111, 171, 255, 0.3);
-    background: rgba(111, 171, 255, 0.06);
+    padding: 1.5rem;
+    border: 1px solid var(--blue-border);
+    background: hsl(215 40% 10% / .6);
+    border-radius: var(--radius);
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: .6rem;
+    backdrop-filter: blur(8px);
 }
 .visual-etiqueta {
-    font-size: .72rem;
+    font-size: .68rem;
     text-transform: uppercase;
-    letter-spacing: .1em;
-    color: var(--blue-font);
-    font-family: 'Google Sans', 'Nunito', sans-serif;
+    letter-spacing: .12em;
+    color: var(--blue);
+    font-family: 'Google Sans', sans-serif;
     font-weight: 700;
-    margin-top: .8rem;
+    margin-top: .9rem;
 }
-.visual-etiqueta:first-child {
-    margin-top: 0;
-}
+.visual-etiqueta:first-child { margin-top: 0; }
 .visual-chips {
     display: flex;
     flex-wrap: wrap;
-    gap: .35rem;
+    gap: .4rem;
 }
 .visual-chips span {
-    font-size: .75rem;
-    padding: .18rem .6rem;
-    background: rgba(111, 171, 255, 0.18);
-    color: var(--white-gray);
+    font-size: .72rem;
+    padding: .2rem .65rem;
+    background: hsl(215 100% 65% / .14);
+    color: var(--text-light);
     font-weight: 600;
-    font-family: 'Google Sans', 'Nunito', sans-serif;
-    border: .05rem solid rgba(111, 171, 255, 0.35);
+    font-family: 'Google Sans', sans-serif;
+    border: 1px solid hsl(215 100% 70% / .3);
+    border-radius: var(--radius-sm);
 }
 .visual-chip-destacado {
-    background: rgba(111, 171, 255, 0.35) !important;
-    color: var(--blue-font) !important;
+    background: hsl(215 100% 65% / .28) !important;
+    color: var(--blue) !important;
+    border-color: hsl(215 100% 70% / .5) !important;
 }
-#title {
-    color: var(--blue-font);
+
+/* ─── Botón ──────────────────────────────────────────────────────── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    padding: .72rem 1.7rem;
+    background: var(--blue);
+    color: var(--bg-dark);
+    font-weight: 700;
+    font-size: .9rem;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+    box-shadow: 0 2px 12px hsl(215 100% 70% / .25);
 }
-#title-txt-intro {
-    color: var(--white-gray);
-    font-size: 2rem;
-    margin-bottom: .5rem;
+.btn:hover {
+    background: var(--blue-dim);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px hsl(215 100% 65% / .35);
 }
-#txt-intro {
-    color: var(--white-gray);
-    font-size: larger;
-    text-align: left;
-    max-width: 60ch;
+.btn:active {
+    transform: translateY(0);
 }
-/* Stack tecnologico: layout de texto (Sobre mi, Como trabajo) */
-.tech-stack {
+.presentacion-cta { align-self: flex-start; }
+
+/* ─── Separador de sección ────────────────────────────────────────── */
+.section-heading {
+    font-size: 1.6rem;
+    color: var(--text);
+    margin-bottom: 2rem;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: .75rem;
 }
-.tech-group {
-    padding: 1.2rem 1.5rem;
-    margin-bottom: 1.2rem;
-    background-color: var(--white-gray);
-    border: .1rem solid var(--dark-gray);
-    border-left: 1rem solid var(--blue-font);
+.section-heading::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 1.5em;
+    background: var(--blue);
+    border-radius: 2px;
+    flex-shrink: 0;
 }
-.tech-group h3 {
-    font-size: 1.15rem;
-    margin-bottom: .3rem;
+
+/* ─── Sobre mí / Cómo trabajo ─────────────────────────────────────── */
+.prose-section {
+    background: var(--bg);
 }
-.tech-group p {
-    font-size: .95rem;
+.prose-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.2rem;
 }
-/* Seccion Tecnologias: grid de pills */
+.prose-card {
+    background: var(--bg-card);
+    border: 1px solid hsl(215 30% 88%);
+    border-left: 3px solid var(--blue);
+    border-radius: var(--radius);
+    padding: 1.3rem 1.5rem;
+    font-size: .97rem;
+    color: var(--text-muted);
+    box-shadow: var(--shadow-card);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+.prose-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 24px hsl(215 40% 60% / .13);
+}
+
+/* ─── Tecnologías ─────────────────────────────────────────────────── */
+.tech-section {
+    background: var(--bg);
+}
 .tech-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-    gap: 1.8rem;
+    gap: 1.4rem;
+}
+.tech-categoria {
+    background: var(--bg-card);
+    border: 1px solid hsl(215 30% 88%);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem;
+    box-shadow: var(--shadow-card);
 }
 .tech-categoria h3 {
-    font-size: .8rem;
+    font-size: .7rem;
     text-transform: uppercase;
-    letter-spacing: .08em;
-    color: var(--dark-gray);
-    margin-bottom: .7rem;
+    letter-spacing: .1em;
+    color: var(--text-muted);
+    margin-bottom: .8rem;
+    font-weight: 700;
 }
 .tech-pills {
     display: flex;
     flex-wrap: wrap;
-    gap: .45rem;
+    gap: .4rem;
 }
 .tech-pill {
     display: inline-block;
-    padding: .28rem .85rem;
-    background-color: var(--blue-font);
-    color: var(--global-grey);
-    font-size: .82rem;
+    padding: .25rem .75rem;
+    background: var(--blue-faint);
+    color: var(--blue-dim);
+    border: 1px solid var(--blue-border);
+    font-size: .78rem;
     font-weight: 700;
-    font-family: 'Google Sans', 'Nunito', sans-serif;
+    font-family: 'Google Sans', sans-serif;
+    border-radius: 99px;
+    transition: background var(--transition), color var(--transition);
 }
-/* Aplicaciones */
-.app-bubble {
-    display: flex;
-    flex-direction: column;
+.tech-pill:hover {
+    background: var(--blue);
+    color: var(--bg-dark);
+    border-color: var(--blue);
+}
+
+/* ─── Aplicaciones ─────────────────────────────────────────────────── */
+.apps-section {
+    background: var(--bg);
+}
+.apps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
 }
 .app-card {
-    position: relative;
+    background: var(--bg-card);
+    border: 1px solid hsl(215 30% 88%);
+    border-radius: var(--radius);
+    padding: 1.8rem;
+    box-shadow: var(--shadow-card);
     display: flex;
     flex-direction: column;
-    gap: .8rem;
-    padding: 1.8rem;
-    border: .15rem solid var(--global-grey);
-    clip-path: polygon(0 0, 92% 0, 100% 12%, 100% 100%, 0 100%);
-    max-width: 420px;
+    gap: .9rem;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+.app-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px hsl(215 40% 60% / .16);
 }
 .app-icon {
-    width: 70px;
-    height: 70px;
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius);
+    overflow: hidden;
     flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 .app-icon img {
     width: 100%;
@@ -292,139 +373,132 @@ footer a:hover::after {
     display: block;
 }
 .app-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
+    color: var(--text);
 }
 .app-card p {
-    font-size: .95rem;
+    font-size: .94rem;
+    color: var(--text-muted);
+    flex-grow: 1;
 }
-/* Boton con relleno diagonal al pasar el mouse */
-.btn {
-    position: relative;
-    display: inline-block;
-    align-self: flex-start;
-    padding: .7rem 1.6rem;
-    background-color: var(--blue-font);
-    color: var(--global-grey);
-    font-weight: 700;
-    overflow: hidden;
-    z-index: 1;
-    transition: color .25s ease;
+
+/* ─── Contacto ─────────────────────────────────────────────────────── */
+.contact-section {
+    background: var(--bg);
 }
-.btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -15%;
-    width: 130%;
-    height: 100%;
-    background-color: var(--global-grey);
-    transform: translateX(-100%) skewX(-15deg);
-    transition: transform .3s ease;
-    z-index: -1;
+.contact-box {
+    background: var(--bg-dark);
+    border-radius: var(--radius);
+    border: 1px solid var(--blue-border);
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 540px;
+    background-image:
+        radial-gradient(hsl(215 100% 75% / .05) 1px, transparent 1px);
+    background-size: 24px 24px;
 }
-.btn:hover {
-    color: var(--white-gray);
+.contact-box p {
+    font-size: 1rem;
+    color: hsl(220 20% 70%);
 }
-.btn:hover::before {
-    transform: translateX(0) skewX(-15deg);
+.contact-box .section-heading {
+    color: var(--text-light);
 }
-/* Pie de pagina con corte diagonal arriba */
+.contact-box .section-heading::before {
+    background: var(--blue);
+}
+
+/* ─── Footer ─────────────────────────────────────────────────────── */
 footer {
-    position: relative;
-    background-color: var(--global-grey);
-    color: var(--white-gray);
+    background-color: var(--bg-dark);
+    border-top: 1px solid var(--blue-border);
+    color: hsl(220 15% 55%);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
-    padding: 4rem 2rem 1.8rem;
-    clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
+    gap: .8rem;
+    padding: 1.6rem 2.5rem;
+    font-size: .85rem;
 }
 footer a {
-    color: var(--blue-font);
+    color: var(--blue);
     font-weight: 700;
+    position: relative;
 }
-/* El subrayado (::after) ya viene del bloque compartido de arriba, */
-/* aca solo se agrega el cambio de color que hace unico a este link */
-footer a:hover {
-    color: var(--white-gray);
+footer a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -.15rem;
+    width: 100%;
+    height: 2px;
+    background: var(--blue);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--transition);
 }
+footer a:hover { color: var(--text-light); }
 footer a:hover::after {
-    background-color: var(--white-gray);
+    transform: scaleX(1);
+    transform-origin: left;
+    background: var(--text-light);
 }
-/* Mejora propia (no pedida): estados de foco visibles para quien navega con teclado */
-/* Sin sombra ni radio, solo un contorno solido que respeta la paleta */
+
+/* ─── Accesibilidad: focus visible ──────────────────────────────── */
 .nav-link:focus-visible,
-.blue-link:focus-visible,
 .btn:focus-visible,
-footer a:focus-visible {
-    outline: .15rem solid var(--blue-font);
-    outline-offset: .25rem;
+footer a:focus-visible,
+#txt-intro .blue-link:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+    border-radius: 2px;
 }
-/* Responsive */
-@media (max-width: 900px) {
-    .app-card {
-        max-width: 100%;
-    }
-    /* En tablet: ocultar la visual y pasar a una sola columna */
-    #tarjeta-presentacion {
+
+/* ─── Animaciones de entrada ─────────────────────────────────────── */
+.fade-up {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity .55s ease, transform .55s ease;
+}
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+    .portada-inner {
         grid-template-columns: 1fr;
     }
     .presentacion-visual {
         display: none;
     }
-    #tarjeta-presentacion::before {
-        width: 55%;
-        opacity: .1;
-    }
 }
 @media (max-width: 700px) {
     .header-bar {
-        padding: 1rem 1.2rem;
+        padding: .85rem 1.4rem;
     }
-    #title {
-        font-size: 1.4rem;
-    }
-    .nav-link {
-        font-size: medium;
-    }
-    #title-txt-intro {
-        font-size: 1.6rem;
-    }
-    #txt-intro {
-        font-size: 1rem;
-    }
-    article {
-        padding: 2.2rem 1.2rem;
-    }
-    footer {
-        flex-direction: column;
-        text-align: center;
-        padding-top: 3.5rem;
-    }
+    .nav-bar { gap: 1.2rem; }
+    .section-wrap { padding: 3.5rem 1.4rem; }
+    .portada-inner { padding: 5rem 1.4rem 4rem; }
+    .contact-box { padding: 2rem 1.4rem; }
+    footer { padding: 1.4rem; }
 }
 @media (max-width: 480px) {
-    #tarjeta-presentacion {
-        padding: 2rem 1.5rem 3.5rem;
-    }
-    #tarjeta-presentacion::before {
-        display: none;
-    }
-    .app-card {
-        clip-path: polygon(0 0, 88% 0, 100% 8%, 100% 100%, 0 100%);
-    }
-    .btn {
-        width: 100%;
-        text-align: center;
-    }
-    footer {
-        clip-path: polygon(0 22px, 100% 0, 100% 100%, 0 100%);
-    }
+    .portada-headline { font-size: 1.9rem; }
+    .btn { width: 100%; justify-content: center; }
+    .apps-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; text-align: center; }
 }
-/* Respeto por preferencia de movimiento reducido */
+
+/* ─── Movimiento reducido ────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-    * {
+    *, *::before, *::after {
         transition: none !important;
+        animation: none !important;
     }
+    .fade-up { opacity: 1; transform: none; }
 }

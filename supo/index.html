@@ -10,117 +10,165 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
         rel="stylesheet">
-    <title>Supo - Gestor de suscripciones</title>
+
+    <title>Supo — Gestor de suscripciones privado | Ey40-0</title>
+    <meta name="description" content="Supo es un gestor de suscripciones minimalista y privado para Android. Registra tus servicios, recibe recordatorios y controla tus gastos mensuales sin que tus datos salgan de tu dispositivo.">
+    <meta name="author" content="Ey4">
+    <link rel="canonical" href="https://ey40-0.github.io/supo/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Supo — Gestor de suscripciones privado">
+    <meta property="og:description" content="App Android minimalista para controlar tus suscripciones. Sin cuenta, sin internet, sin rastreo.">
+    <meta property="og:url" content="https://ey40-0.github.io/supo/">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Supo — Gestor de suscripciones privado">
+    <meta name="twitter:description" content="Controla tus suscripciones de forma privada. Sin cuenta ni rastreo.">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "Supo",
+      "operatingSystem": "Android",
+      "applicationCategory": "FinanceApplication",
+      "url": "https://ey40-0.github.io/supo/",
+      "description": "Gestor de suscripciones minimalista y privado para Android.",
+      "author": { "@type": "Person", "name": "Ey4" }
+    }
+    </script>
 </head>
 
 <body>
-    <!-- Header con vuelta al portafolio y navegacion a las secciones de esta misma pagina -->
+
+    <!-- Header -->
     <header class="header-bar">
         <a href="../index.html" class="nav-link brand-link">← Ey40-0</a>
-        <nav class="nav-bar">
-            <a href="#manual" class="nav-link">Como funciona</a>
+        <nav class="nav-bar" aria-label="Navegación Supo">
+            <a href="#manual" class="nav-link">Cómo funciona</a>
             <a href="#privacidad" class="nav-link">Privacidad</a>
             <a href="#apoyame" class="nav-link">Apoyame</a>
         </nav>
     </header>
-    <!-- Portada: que es Supo -->
-    <article class="seccion-portada">
-        <section id="portada-app">
-            <div class="icono-portada">
-                <img src="/supo/assets/icon/Supo.png" alt="supo-logo-img">
-            </div>
-            <h1 id="app-title">Supo</h1>
-            <p id="eslogan-app">Para que ningun cobro te tome por sorpresa.</p>
-            <p id="app-description">Supo es un gestor de suscripciones simple y privado. Registra cada servicio, te
-                avisa antes de que llegue el cobro y te muestra cuanto estas pagando este mes. Al tocar una suscripcion
-                se abre directo el enlace de gestion de esa plataforma, para que cambies el metodo de pago, actualices
-                la tarjeta o canceles sin vueltas.</p>
-            <div class="acciones-portada">
-                <a href="https://play.google.com/store/apps/details?id=io.github.ey4.supo" class="btn">Descargar en
-                    Google Play</a>
-                <a href="#manual" class="text-link">Ver como funciona</a>
+
+    <main id="main-content">
+
+        <!-- Portada -->
+        <section class="seccion-portada">
+            <div id="portada-app">
+                <div class="icono-portada">
+                    <img src="/supo/assets/icon/Supo.png" alt="Ícono de la aplicación Supo">
+                </div>
+                <h1 id="app-title">Supo</h1>
+                <p id="eslogan-app">Para que ningún cobro te tome por sorpresa.</p>
+                <p id="app-description">
+                    Gestor de suscripciones simple y privado. Registra cada servicio, recibe un aviso
+                    antes del cobro y ve cuánto estás pagando este mes. Toca cualquier suscripción para
+                    ir directo a su página de gestión.
+                </p>
+                <div class="acciones-portada">
+                    <a href="https://play.google.com/store/apps/details?id=io.github.ey4.supo"
+                        class="btn" target="_blank" rel="noopener">Descargar en Google Play</a>
+                    <a href="#manual" class="text-link">Ver cómo funciona</a>
+                </div>
             </div>
         </section>
-    </article>
-    <!-- Manual de uso en 3 pasos, con espacio para captura + texto libre en cada uno -->
-    <article class="manual-section" id="manual">
-        <h2 class="section-heading">Como funciona</h2>
-        <div class="steps">
-            <div class="step-card">
-                <span class="step-number">01</span>
-                <h3>Agrega tus suscripciones</h3>
-                <div class="step-image">
-                    <img src="/supo/assets/images/step_one.png" alt="step_one.png">
+
+        <!-- Manual de uso -->
+        <article class="manual-section section-wrap fade-up" id="manual">
+            <h2 class="section-heading">Cómo funciona</h2>
+            <div class="steps">
+                <div class="step-card">
+                    <span class="step-number">01</span>
+                    <h3>Agrega tus suscripciones</h3>
+                    <div class="step-image">
+                        <img src="/supo/assets/images/step_one.png" alt="Pantalla para agregar una suscripción en Supo">
+                    </div>
+                    <p class="step-text">Registra el nombre, monto y día de cobro de cada servicio. Puedes obtener estos datos desde la página de tu suscripción.</p>
                 </div>
-                <p class="step-text">Registra el nombre, monto y día de cobro de cada servicio para mantener un control
-                    claro de tus pagos. Puedes obtener estos datos desde la pagina de tu suscripcion.</p>
-            </div>
-            <div class="step-card">
-                <span class="step-number">02</span>
-                <h3>Recibe recordatorios</h3>
-                <div class="step-image">
-                    <img src="/supo/assets/images/step_two.png" alt="step_two.png">
+                <div class="step-card">
+                    <span class="step-number">02</span>
+                    <h3>Recibe recordatorios</h3>
+                    <div class="step-image">
+                        <img src="/supo/assets/images/step_two.png" alt="Notificación de recordatorio de cobro en Supo">
+                    </div>
+                    <p class="step-text">Activa notificaciones para recibir un aviso antes del siguiente cobro y evitar pagos inesperados.</p>
                 </div>
-                <p class="step-text">Activa notificaciones para recibir un aviso antes del siguiente cobro y evitar
-                    pagos inesperados.</p>
-            </div>
-            <div class="step-card">
-                <span class="step-number">03</span>
-                <h3>Asegura las notificaciones</h3>
-                <div class="step-image">
-                    <img src="/supo/assets/images/step_three.png" alt="step_three.png">
+                <div class="step-card">
+                    <span class="step-number">03</span>
+                    <h3>Asegura las notificaciones</h3>
+                    <div class="step-image">
+                        <img src="/supo/assets/images/step_three.png" alt="Configuración de batería para notificaciones en Supo">
+                    </div>
+                    <p class="step-text">Desactiva el ahorro de batería en la configuración de tu dispositivo para que las notificaciones lleguen a tiempo.</p>
                 </div>
-                <p class="step-text">Desactiva el ahorro de batería en la configuración de tu dispositivo para asegurar
-                    que las notificaciones lleguen a tiempo.</p>
-            </div>
-            <div class="step-card">
-                <span class="step-number">04</span>
-                <h3>Gestiona tus suscripciones</h3>
-                <div class="step-image">
-                    <img src="/supo/assets/images/step_four.png" alt="step_four.png">
+                <div class="step-card">
+                    <span class="step-number">04</span>
+                    <h3>Gestiona tus suscripciones</h3>
+                    <div class="step-image">
+                        <img src="/supo/assets/images/step_four.png" alt="Gestión de suscripciones con swipe en Supo">
+                    </div>
+                    <p class="step-text">Desliza a la derecha para editar y a la izquierda para ocultar. Tócala para abrir su sitio web.</p>
                 </div>
-                <p class="step-text">Desplaza una suscripcion a la derecha para editar y a la izquierda para ocultar.
-                    Ademas puedes clickearla para acceder a su sitio web.</p>
-            </div>
-            <div class="step-card">
-                <span class="step-number">05</span>
-                <h3>Administra desde la web</h3>
-                <div class="step-image">
-                    <img src="/supo/assets/images/step_five.png" alt="step_five.png">
+                <div class="step-card">
+                    <span class="step-number">05</span>
+                    <h3>Administra desde la web</h3>
+                    <div class="step-image">
+                        <img src="/supo/assets/images/step_five.png" alt="Campo de enlace web en Supo">
+                    </div>
+                    <p class="step-text">Usa el campo "Enlace" para acceder a la página de tu suscripción con un solo toque. Copia el enlace oficial del servicio y pégalo en la app.</p>
                 </div>
-                <p class="step-text">Usa el campo 'Enlace' para acceder a la página de tu suscripción con un solo toque.
-                    Si no conoces la dirección, busca la página oficial del servicio, copia su enlace y pégalo en la
-                    aplicación. Asegúrate de ingresar un enlace válido para que pueda abrirse correctamente.</p>
             </div>
-        </div>
-    </article>
-    <!-- Privacidad: el enlace queda listo, el contenido lo escribe Ey40-0 -->
-    <article class="privacy-section" id="privacidad">
-        <h2 class="section-heading">Privacidad</h2>
-        <p>Antes de agregar tus suscripciones, revisa como Supo trata tus datos.</p>
-        <ul class="privacidad-puntos">
-            <li>Sin cuenta ni registro</li>
-            <li>Tus datos nunca salen de tu dispositivo</li>
-            <li>Sin publicidad ni rastreo</li>
-            <li>Sin conexion a internet</li>
-        </ul>
-        <a href="./privacy.html" class="btn btn-outline">Ver politica de privacidad</a>
-    </article>
-    <!-- Apoyame: aporte voluntario fuera de la app, no desbloquea funciones -->
-    <article class="coffee-section" id="apoyame">
-        <h2 class="section-heading">Apoyame</h2>
-        <p>Supo es y seguira siendo gratuita. Si te ayudo a esquivar un cobro sorpresa, puedes apoyar el proyecto. Es un
-            gesto totalmente voluntario, se hace fuera de la app y no desbloquea nada dentro de ella.</p>
-        <a href="https://link.mercadopago.cl/ey4developer" class="btn" target="_blank" rel="noopener">Apoya al
-            creador</a> <!-- Reemplazar tu-usuario por tu usuario real -->
-    </article>
-    <!-- fin de pagina -->
+        </article>
+
+        <!-- Privacidad -->
+        <article class="privacy-section section-wrap fade-up" id="privacidad">
+            <h2 class="section-heading">Privacidad</h2>
+            <p class="privacy-intro">Antes de agregar tus suscripciones, revisa cómo Supo trata tus datos.</p>
+            <ul class="privacidad-puntos">
+                <li>Sin cuenta ni registro</li>
+                <li>Tus datos nunca salen de tu dispositivo</li>
+                <li>Sin publicidad ni rastreo</li>
+                <li>Sin conexión a internet</li>
+            </ul>
+            <a href="./privacy.html" class="btn btn-outline">Ver política de privacidad</a>
+        </article>
+
+        <!-- Apoyame -->
+        <article class="coffee-section section-wrap fade-up" id="apoyame">
+            <div class="coffee-box">
+                <h2 class="section-heading">Apoyame</h2>
+                <p>
+                    Supo es y seguirá siendo gratuita. Si te ayudó a esquivar un cobro sorpresa,
+                    puedes apoyar el proyecto. Es un gesto totalmente voluntario, se hace fuera de
+                    la app y no desbloquea nada dentro de ella.
+                </p>
+                <a href="https://link.mercadopago.cl/ey4developer" class="btn"
+                    target="_blank" rel="noopener">Apoya al creador</a>
+            </div>
+        </article>
+
+    </main>
+
     <footer>
         <p data-site="copyright"></p>
         <a data-site="github-link" target="_blank" rel="noopener">GitHub</a>
     </footer>
 
     <script src="/site-config.js"></script>
+    <script>
+        /* Animaciones de entrada al hacer scroll */
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    </script>
 </body>
 
 </html>
