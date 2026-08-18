@@ -121,18 +121,18 @@ a {
     transform: skewX(-15deg);
     transform-origin: left;
 }
-/* Hero de la app */
-#app-hero {
+/* Portada de la app (antes: hero) */
+#portada-app {
     position: relative;
     overflow: hidden;
     background-color: var(--global-grey);
     text-align: center;
     padding: 3.5rem 2rem 5rem;
-/* Inclinacion del hero: el ultimo valor (0 90%) es la esquina inferior izquierda. */
+/* Inclinacion de la portada: el ultimo valor (0 90%) es la esquina inferior izquierda. */
 /* Bajar ese porcentaje = corte mas pronunciado, subirlo (mas cerca de 100%) = corte mas sutil */
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
 }
-#app-hero::before {
+#portada-app::before {
     content: '';
     position: absolute;
     top: 0;
@@ -144,7 +144,7 @@ a {
     clip-path: polygon(0 0, 60% 0, 30% 100%, 0 100%);
     z-index: -1;
 }
-.app-hero-icon {
+.icono-portada {
     width: 90px;
     height: 90px;
     margin: 0 auto 1.5rem;
@@ -152,7 +152,7 @@ a {
     align-items: center;
     justify-content: center;
 }
-.app-hero-icon img,
+.icono-portada img,
 .step-image img {
     width: 100%;
     height: 100%;
@@ -162,7 +162,7 @@ a {
     color: var(--white-gray);
     font-size: 2.6rem;
 }
-#app-tagline {
+#eslogan-app {
     color: var(--supo-purple);
     font-size: 1.3rem;
     font-weight: 700;
@@ -173,7 +173,7 @@ a {
     max-width: 55ch;
     margin: 1.5rem auto 0;
 }
-.hero-actions {
+.acciones-portada {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -225,10 +225,29 @@ a {
     margin-bottom: 1rem;
     clip-path: polygon(0 0, 94% 0, 100% 14%, 100% 100%, 0 100%);
 } */
-/* Texto libre a completar por Ey40-0, se marca en cursiva mientras es un placeholder */
 .step-text {
-    font-style: italic;
     color: var(--dark-gray);
+}
+/* Privacidad: lista de garantias */
+.privacidad-puntos {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+}
+.privacidad-puntos li {
+    padding-left: 1.6rem;
+    position: relative;
+    color: var(--dark-gray);
+}
+.privacidad-puntos li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--supo-purple);
+    font-weight: 700;
 }
 /* Privacidad y donaciones comparten el mismo formato simple */
 .privacy-section,
@@ -398,7 +417,7 @@ footer a:focus-visible {
 }
 /* Responsive */
 @media (max-width: 900px) {
-    #app-hero::before {
+    #portada-app::before {
         width: 60%;
         opacity: .1;
     }
@@ -418,7 +437,7 @@ footer a:focus-visible {
     #app-title {
         font-size: 2rem;
     }
-    #app-hero {
+    #portada-app {
         padding: 2.5rem 1.5rem 4rem;
     }
     article {
@@ -434,15 +453,15 @@ footer a:focus-visible {
     }
 }
 @media (max-width: 480px) {
-    #app-hero::before {
+    #portada-app::before {
         display: none;
     }
-    .hero-actions {
+    .acciones-portada {
         flex-direction: column;
         width: 100%;
     }
-    .hero-actions .btn,
-    .hero-actions .text-link {
+    .acciones-portada .btn,
+    .acciones-portada .text-link {
         width: 100%;
         text-align: center;
     }

@@ -114,20 +114,35 @@ footer a:hover::after {
     transform: skewX(-15deg);
     transform-origin: left;
 }
-/* Presentacion (hero) */
-#presentation-card {
+/* Portada (antes: hero-section) */
+.seccion-portada {
+    padding-top: 3rem;  /* mismo espaciado que el article de Supo */
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
+    margin: 0;
+}
+/* Tarjeta de presentacion (antes: presentation-card) */
+#tarjeta-presentacion {
 /* Color */
     background-color: var(--global-grey);
+/* Layout split: texto izquierda, visual derecha */
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 2.5rem;
+    align-items: center;
 /* Espacio (el padding-bottom extra da espacio para que el corte de abajo no tape el texto) */
     padding: 3rem 2.5rem 5rem;
+    max-width: 1100px;
+    margin: 0 auto;
 /* Recorte diagonal */
     position: relative;
     overflow: hidden;
-/* Inclinacion de la card: el ultimo valor (0 88%) es la esquina inferior izquierda. */
-/* Bajar ese porcentaje = corte mas pronunciado, subirlo (mas cerca de 100%) = corte mas sutil */
+/* Inclinacion: el ultimo valor (0 88%) es la esquina inferior izquierda */
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
 }
-#presentation-card::before {
+#tarjeta-presentacion::before {
     content: '';
     position: absolute;
     top: 0;
@@ -139,21 +154,69 @@ footer a:hover::after {
     clip-path: polygon(100% 0, 100% 100%, 40% 100%, 70% 0);
     z-index: -1;
 }
+/* Contenedor izquierdo del split */
+.presentacion-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.presentacion-cta {
+    align-self: flex-start;
+}
+/* Tarjeta visual derecha del split */
+.presentacion-visual {
+    padding: 1.2rem 1.4rem;
+    border: .1rem solid rgba(111, 171, 255, 0.3);
+    background: rgba(111, 171, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.visual-etiqueta {
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--blue-font);
+    font-family: 'Google Sans', 'Nunito', sans-serif;
+    font-weight: 700;
+    margin-top: .8rem;
+}
+.visual-etiqueta:first-child {
+    margin-top: 0;
+}
+.visual-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .35rem;
+}
+.visual-chips span {
+    font-size: .75rem;
+    padding: .18rem .6rem;
+    background: rgba(111, 171, 255, 0.18);
+    color: var(--white-gray);
+    font-weight: 600;
+    font-family: 'Google Sans', 'Nunito', sans-serif;
+    border: .05rem solid rgba(111, 171, 255, 0.35);
+}
+.visual-chip-destacado {
+    background: rgba(111, 171, 255, 0.35) !important;
+    color: var(--blue-font) !important;
+}
 #title {
     color: var(--blue-font);
 }
 #title-txt-intro {
     color: var(--white-gray);
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
 }
 #txt-intro {
     color: var(--white-gray);
     font-size: larger;
-    text-align: justify;
+    text-align: left;
     max-width: 60ch;
 }
-/* Stack tecnologico */
+/* Stack tecnologico: layout de texto (Sobre mi, Como trabajo) */
 .tech-stack {
     display: flex;
     flex-direction: column;
@@ -171,6 +234,33 @@ footer a:hover::after {
 }
 .tech-group p {
     font-size: .95rem;
+}
+/* Seccion Tecnologias: grid de pills */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 1.8rem;
+}
+.tech-categoria h3 {
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--dark-gray);
+    margin-bottom: .7rem;
+}
+.tech-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .45rem;
+}
+.tech-pill {
+    display: inline-block;
+    padding: .28rem .85rem;
+    background-color: var(--blue-font);
+    color: var(--global-grey);
+    font-size: .82rem;
+    font-weight: 700;
+    font-family: 'Google Sans', 'Nunito', sans-serif;
 }
 /* Aplicaciones */
 .app-bubble {
@@ -277,7 +367,14 @@ footer a:focus-visible {
     .app-card {
         max-width: 100%;
     }
-    #presentation-card::before {
+    /* En tablet: ocultar la visual y pasar a una sola columna */
+    #tarjeta-presentacion {
+        grid-template-columns: 1fr;
+    }
+    .presentacion-visual {
+        display: none;
+    }
+    #tarjeta-presentacion::before {
         width: 55%;
         opacity: .1;
     }
@@ -297,7 +394,6 @@ footer a:focus-visible {
     }
     #txt-intro {
         font-size: 1rem;
-        text-align: left;
     }
     article {
         padding: 2.2rem 1.2rem;
@@ -309,10 +405,10 @@ footer a:focus-visible {
     }
 }
 @media (max-width: 480px) {
-    #presentation-card {
+    #tarjeta-presentacion {
         padding: 2rem 1.5rem 3.5rem;
     }
-    #presentation-card::before {
+    #tarjeta-presentacion::before {
         display: none;
     }
     .app-card {

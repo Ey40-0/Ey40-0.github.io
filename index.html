@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
 
     <title>Ey4 — Desarrollador de software y apps móviles | Ey40-0</title>
-    <meta name="description" content="Ey4 (Ey40-0) es estudiante de Ingeniería Civil Informática y desarrollador enfocado en aplicaciones móviles y software simple. Conoce Supo, su gestor de suscripciones privado, y el resto de sus proyectos.">
+    <meta name="description"
+        content="Ey4 (Ey40-0) es estudiante de Ingeniería Civil Informática y desarrollador enfocado en aplicaciones móviles y software simple. Conoce Supo, su gestor de suscripciones privado, y el resto de sus proyectos.">
     <meta name="author" content="Ey4">
     <link rel="canonical" href="https://ey40-0.github.io/">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Ey4 — Desarrollador de software y apps móviles">
-    <meta property="og:description" content="Estudiante de Ingeniería Civil Informática y desarrollador de aplicaciones móviles. Creador de Supo, un gestor de suscripciones privado y minimalista.">
+    <meta property="og:description"
+        content="Estudiante de Ingeniería Civil Informática y desarrollador de aplicaciones móviles. Creador de Supo, un gestor de suscripciones privado y minimalista.">
     <meta property="og:url" content="https://ey40-0.github.io/">
     <meta property="og:site_name" content="Ey4">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Ey4 — Desarrollador de software y apps móviles">
-    <meta name="twitter:description" content="Estudiante de Ingeniería Civil Informática. Desarrollo aplicaciones móviles simples y privadas, como Supo.">
+    <meta name="twitter:description"
+        content="Estudiante de Ingeniería Civil Informática. Desarrollo aplicaciones móviles simples y privadas, como Supo.">
 
     <!-- Datos estructurados: ayuda a Google a entender quién eres, no solo qué dice el texto -->
     <script type="application/ld+json">
@@ -43,6 +49,7 @@
     }
     </script>
 </head>
+
 <body>
 
     <!-- Encabezado con marca y navegación -->
@@ -58,16 +65,36 @@
     <main id="main-content">
 
         <!-- Presentación -->
-        <article class="hero-section">
-            <section id="presentation-card">
-                <h2 id="title-txt-intro">Hola, soy Ey4 👋</h2>
-                <p id="txt-intro">
-                    Soy estudiante de Ingeniería Civil Informática y desarrollador enfocado en
-                    aplicaciones móviles y software simple. Mi proyecto principal es
-                    <strong>Supo</strong>, un gestor de suscripciones privado y minimalista.
-                    Puedes revisar el resto de mis proyectos en
-                    <a href="https://github.com/Ey40-0" class="blue-link">GitHub</a>.
-                </p>
+        <article class="seccion-portada">
+            <section id="tarjeta-presentacion">
+                <div class="presentacion-texto">
+                    <h2 id="title-txt-intro">Hola, soy Ey4 👋</h2>
+                    <p id="txt-intro">
+                        Soy estudiante de Ingeniería Civil Informática y desarrollador enfocado en
+                        aplicaciones móviles y software simple. Mi proyecto principal es
+                        <strong>Supo</strong>, un gestor de suscripciones privado y minimalista.
+                        Puedes revisar el resto de mis proyectos en
+                        <a href="https://github.com/Ey40-0" class="blue-link">GitHub</a>.
+                    </p>
+                    <a href="#apps" class="btn presentacion-cta">Ver mis proyectos</a>
+                </div>
+                <div class="presentacion-visual" aria-hidden="true">
+                    <p class="visual-etiqueta">Stack principal</p>
+                    <div class="visual-chips">
+                        <span>Flutter</span>
+                        <span>Dart</span>
+                        <span>Kotlin</span>
+                        <span>Laravel</span>
+                        <span>Python</span>
+                        <span>JavaScript</span>
+                        <span>MySQL</span>
+                        <span>Git</span>
+                    </div>
+                    <p class="visual-etiqueta">En producción</p>
+                    <div class="visual-chips">
+                        <span class="visual-chip-destacado">Supo — Google Play</span>
+                    </div>
+                </div>
             </section>
         </article>
 
@@ -96,29 +123,51 @@
 
         <!-- Stack tecnológico -->
         <article class="stack-section" id="tech">
-            <section class="tech-stack">
-                <h2 class="section-heading">Tecnologías</h2>
-                <div class="tech-group">
+            <h2 class="section-heading">Tecnologías</h2>
+            <div class="tech-grid">
+                <div class="tech-categoria">
                     <h3>Mobile</h3>
-                    <p>Flutter / Dart / Kotlin / Ionic</p>
+                    <div class="tech-pills">
+                        <span class="tech-pill">Flutter</span>
+                        <span class="tech-pill">Dart</span>
+                        <span class="tech-pill">Kotlin</span>
+                        <span class="tech-pill">Ionic</span>
+                    </div>
                 </div>
-                <div class="tech-group">
+                <div class="tech-categoria">
                     <h3>Frontend</h3>
-                    <p>HTML5 / CSS3 / JavaScript</p>
+                    <div class="tech-pills">
+                        <span class="tech-pill">HTML5</span>
+                        <span class="tech-pill">CSS3</span>
+                        <span class="tech-pill">JavaScript</span>
+                    </div>
                 </div>
-                <div class="tech-group">
+                <div class="tech-categoria">
                     <h3>Backend</h3>
-                    <p>PHP / Laravel / Java / Python</p>
+                    <div class="tech-pills">
+                        <span class="tech-pill">PHP</span>
+                        <span class="tech-pill">Laravel</span>
+                        <span class="tech-pill">Java</span>
+                        <span class="tech-pill">Python</span>
+                    </div>
                 </div>
-                <div class="tech-group">
+                <div class="tech-categoria">
                     <h3>Bases de datos</h3>
-                    <p>MySQL / SQL</p>
+                    <div class="tech-pills">
+                        <span class="tech-pill">MySQL</span>
+                        <span class="tech-pill">SQL</span>
+                    </div>
                 </div>
-                <div class="tech-group">
+                <div class="tech-categoria">
                     <h3>Herramientas</h3>
-                    <p>Git / GitHub / Android Studio / VS Code</p>
+                    <div class="tech-pills">
+                        <span class="tech-pill">Git</span>
+                        <span class="tech-pill">GitHub</span>
+                        <span class="tech-pill">Android Studio</span>
+                        <span class="tech-pill">VS Code</span>
+                    </div>
                 </div>
-            </section>
+            </div>
         </article>
 
         <!-- Aplicaciones -->
@@ -181,9 +230,11 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Ey40-0. Desarrollado con código limpio.</p>
-        <a href="https://github.com/Ey40-0" target="_blank" rel="noopener">GitHub</a>
+        <p data-site="copyright"></p>
+        <a data-site="github-link" target="_blank" rel="noopener">GitHub</a>
     </footer>
 
+    <script src="/site-config.js"></script>
 </body>
+
 </html>
