@@ -6,4 +6,4 @@ Mi espacio personal en la web. Acá alojo mi portafolio como desarrollador y las
 * `/` - Portafolio personal y proyectos en los que trabajo.
 * `/supo/` - Landing page, ayuda y política de privacidad de **Supo** (Gestor de suscripciones).
 
-Construido de forma ligera con HTML, CSS y JS puro. Sin frameworks pesados ni configuraciones raras. Less is more.
+Construido de forma ligera con HTML, CSS y JS puro.
