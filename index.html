@@ -38,7 +38,10 @@
       "alternateName": "Ey40-0",
       "url": "https://ey40-0.github.io/",
       "sameAs": [
-        "https://github.com/Ey40-0"
+        "https://github.com/Ey40-0",
+        "https://www.instagram.com/llancaaa/",
+        "https://www.reddit.com/user/Ey40_0/",
+        "https://x.com/como_m_llmo"
       ],
       "jobTitle": "Estudiante de Ingeniería Civil Informática",
       "description": "Estudiante de Ingeniería Civil Informática enfocado en desarrollo de software y aplicaciones móviles, creador de la app Supo.",
@@ -66,6 +69,7 @@
 
         <!-- Portada -->
         <section class="seccion-portada">
+            <canvas id="particles-canvas" aria-hidden="true"></canvas>
             <div class="portada-inner">
                 <div class="presentacion-texto">
                     <span class="portada-kicker">Desarrollador de software</span>
@@ -86,7 +90,7 @@
                     <div class="visual-chips">
                         <span>Flutter</span>
                         <span>Dart</span>
-                        <span>Kotlin</span>
+                        <span>Java</span>
                         <span>Laravel</span>
                         <span>Python</span>
                         <span>JavaScript</span>
@@ -95,13 +99,13 @@
                     </div>
                     <p class="visual-etiqueta">En producción</p>
                     <div class="visual-chips">
-                        <span class="visual-chip-destacado">Supo — Google Play</span>
+                        <a href="#apps" class="visual-chip-destacado visual-chip-link">Supo — Google Play</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Sobre mí -->
+        <!-- Sobre mi -->
         <article class="prose-section section-wrap fade-up" id="about">
             <h2 class="section-heading">Sobre mí</h2>
             <div class="prose-grid">
@@ -120,7 +124,7 @@
             </div>
         </article>
 
-        <!-- Stack tecnológico -->
+        <!-- Stack tecnologico -->
         <article class="tech-section section-wrap fade-up" id="tech">
             <h2 class="section-heading">Tecnologías</h2>
             <div class="tech-grid">
@@ -185,7 +189,7 @@
                     <a href="./supo/" class="btn">Ver app</a>
                 </div>
 
-                <!-- Espacio listo para cuando retomes Declutter u otra app -->
+                <!-- Espacio listo para otras apps -->
                 <!--
                 <div class="app-card">
                     ...
@@ -211,10 +215,47 @@
             <div class="contact-box">
                 <h2 class="section-heading">Contacto</h2>
                 <p>
-                    Por ahora, GitHub es el mejor lugar para seguir lo que estoy construyendo
-                    o para contactarme.
+                    Podés encontrarme en GitHub o seguirme en mis redes sociales.
                 </p>
-                <a href="https://github.com/Ey40-0" class="btn" target="_blank" rel="noopener">GitHub: Ey40-0</a>
+
+                <div class="contact-main-link">
+                    <a href="https://github.com/Ey40-0" class="btn" target="_blank" rel="noopener">
+                        <!-- GitHub icon -->
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.026 2.747-1.026.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                        </svg>
+                        GitHub: Ey40-0
+                    </a>
+                </div>
+
+                <div class="social-links">
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/llancaaa/?hl=es-la" class="social-btn social-btn--instagram"
+                       target="_blank" rel="noopener" aria-label="Instagram de Ey4">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                        </svg>
+                        Instagram
+                    </a>
+
+                    <!-- Reddit -->
+                    <a href="https://www.reddit.com/user/Ey40_0/" class="social-btn social-btn--reddit"
+                       target="_blank" rel="noopener" aria-label="Reddit de Ey4">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
+                        </svg>
+                        Reddit
+                    </a>
+
+                    <!-- X / Twitter -->
+                    <a href="https://x.com/como_m_llmo" class="social-btn social-btn--x"
+                       target="_blank" rel="noopener" aria-label="X (Twitter) de Ey4">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.912-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                        X
+                    </a>
+                </div>
             </div>
         </article>
 
@@ -222,12 +263,33 @@
 
     <footer>
         <p data-site="copyright"></p>
-        <a data-site="github-link" target="_blank" rel="noopener">GitHub</a>
+        <div class="footer-socials">
+            <a data-site="github-link" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.026 2.747-1.026.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                </svg>
+            </a>
+            <a href="https://www.instagram.com/llancaaa/?hl=es-la" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+            </a>
+            <a href="https://www.reddit.com/user/Ey40_0/" target="_blank" rel="noopener" aria-label="Reddit">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
+                </svg>
+            </a>
+            <a href="https://x.com/como_m_llmo" target="_blank" rel="noopener" aria-label="X (Twitter)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.912-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+            </a>
+        </div>
     </footer>
 
     <script src="/site-config.js"></script>
     <script>
-        /* Animaciones de entrada al hacer scroll */
+        /* ── Animaciones de entrada al hacer scroll ── */
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -238,6 +300,149 @@
         }, { threshold: 0.08 });
 
         document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        /* ── Ripple effect en botones ── */
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                ripple.style.cssText = `width:${size}px;height:${size}px;left:${x}px;top:${y}px`;
+                this.appendChild(ripple);
+                ripple.addEventListener('animationend', () => ripple.remove());
+            });
+        });
+
+        /* ── Partículas interactivas ── */
+        (function () {
+            const canvas = document.getElementById('particles-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+
+            let W, H, particles, mouse = { x: -9999, y: -9999 };
+            const COUNT = 70;
+            const MAX_DIST = 130;
+            const MOUSE_DIST = 110;
+            const SPEED = 0.35;
+
+            function resize() {
+                W = canvas.width  = canvas.offsetWidth;
+                H = canvas.height = canvas.offsetHeight;
+            }
+
+            function rand(min, max) { return Math.random() * (max - min) + min; }
+
+            function initParticles() {
+                particles = Array.from({ length: COUNT }, () => ({
+                    x:  rand(0, W),
+                    y:  rand(0, H),
+                    vx: rand(-SPEED, SPEED),
+                    vy: rand(-SPEED, SPEED),
+                    r:  rand(1.2, 2.4),
+                }));
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, W, H);
+
+                /* Conexiones */
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const p1 = particles[i], p2 = particles[j];
+                        const dx = p1.x - p2.x, dy = p1.y - p2.y;
+                        const d = Math.sqrt(dx * dx + dy * dy);
+                        if (d < MAX_DIST) {
+                            ctx.beginPath();
+                            ctx.moveTo(p1.x, p1.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.strokeStyle = `rgba(111,171,255,${0.18 * (1 - d / MAX_DIST)})`;
+                            ctx.lineWidth = 0.8;
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                /* Puntos */
+                particles.forEach(p => {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(111,171,255,0.55)';
+                    ctx.fill();
+                });
+            }
+
+            function update() {
+                particles.forEach(p => {
+                    /* Repulsión suave del cursor */
+                    const dx = p.x - mouse.x, dy = p.y - mouse.y;
+                    const d = Math.sqrt(dx * dx + dy * dy);
+                    if (d < MOUSE_DIST && d > 0) {
+                        const force = (MOUSE_DIST - d) / MOUSE_DIST * 0.8;
+                        p.vx += (dx / d) * force * 0.08;
+                        p.vy += (dy / d) * force * 0.08;
+                    }
+
+                    /* Fricción para que no se aceleren demasiado */
+                    p.vx *= 0.98;
+                    p.vy *= 0.98;
+
+                    /* Clamp de velocidad */
+                    const speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
+                    if (speed > SPEED * 3) {
+                        p.vx = (p.vx / speed) * SPEED * 3;
+                        p.vy = (p.vy / speed) * SPEED * 3;
+                    }
+
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    /* Rebote en bordes */
+                    if (p.x < 0)  { p.x = 0;  p.vx *= -1; }
+                    if (p.x > W)  { p.x = W;  p.vx *= -1; }
+                    if (p.y < 0)  { p.y = 0;  p.vy *= -1; }
+                    if (p.y > H)  { p.y = H;  p.vy *= -1; }
+                });
+            }
+
+            function loop() {
+                update();
+                draw();
+                requestAnimationFrame(loop);
+            }
+
+            /* Posición del mouse relativa al canvas */
+            const section = canvas.parentElement;
+            section.addEventListener('mousemove', e => {
+                const rect = canvas.getBoundingClientRect();
+                mouse.x = e.clientX - rect.left;
+                mouse.y = e.clientY - rect.top;
+            });
+            section.addEventListener('mouseleave', () => {
+                mouse.x = -9999;
+                mouse.y = -9999;
+            });
+
+            /* Touch */
+            section.addEventListener('touchmove', e => {
+                const rect = canvas.getBoundingClientRect();
+                mouse.x = e.touches[0].clientX - rect.left;
+                mouse.y = e.touches[0].clientY - rect.top;
+            }, { passive: true });
+
+            /* Init */
+            resize();
+            initParticles();
+            loop();
+            window.addEventListener('resize', () => { resize(); initParticles(); });
+
+            /* Respetar prefers-reduced-motion */
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                canvas.style.display = 'none';
+            }
+        })();
     </script>
 </body>
 
